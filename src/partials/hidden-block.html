@@ -1,0 +1,142 @@
+<div class="hidden-block">
+
+    <div id="call_success">
+        <div class="call-success">
+             <div class="call_success">
+                 <div class="call-title">Спасибо за заявку!</div>
+                 <div class="call-subtitle">Мы свяжемся с Вами в ближайшее время</div>
+             </div>
+        </div>
+    </div>
+
+    <div id="call-popup">
+        <form action="ajax.php" name="" class="register">
+            <div class="register__title">
+                <h5>записаться на бесплатную консультацию</h5>
+            </div>
+            <div class="register__trigger">
+                <span>Физическое лицо</span>
+                <span>Юридическое лицо</span>
+            </div>
+            <div class="name-row">
+                <div class="name-row__input">
+                    <label class="name-row__name">Фамилия *</label>
+                    <input type="text" name="register__first-name" required="required" value="" placeholder="Константинов">
+                </div>
+                <div class="name-row__input">
+                    <label class="name-row__last-name">Имя *</label>
+                    <input type="text" name="register_name" required="required" value="" placeholder="Константин">
+                </div>
+                <div class="name-row__input">
+                    <label class="name-row__surname">отчество</label>
+                    <input type="text" name="register_name" required="required" value="" placeholder="Константинович">
+                </div>
+            </div>
+            <div class="contacts-row">
+                <div class="contacts-row__input">
+                    <label class="contacts-row__tel">телефон *</label>
+                    <input type="tel" name="register__tel" required="required" value="" placeholder="+7 999 999 99 99">
+                </div>
+                <div class="contacts-row__input">
+                    <label class="contacts-row__email">Email *</label>
+                    <input type="email" name="register_name" required="required" value="" placeholder="mail@mail.ru">
+                </div>
+            </div>
+            <div class="message-type-row">
+                <div class="message-type-row__input">
+                    <label class="message-type-row__type">тематика обращения *</label>
+                    <input type="tel" name="register__tel" required="required" value="" placeholder="+7 999 999 99 99">
+                </div>
+            </div>
+            <div class="message-row">
+                <div class="message-row__input">
+                    <label class="message-row__text">Суть обращения *</label>
+                    <textarea rows="8" cols="45" name="text">Опишите суть вопроса, чтобы наши юристы смогли подготовиться к вашему приходу.</textarea>
+                </div>
+            </div>
+            <div class="times-row">
+                <div class="times-row__input">
+                    <label class="times-row__calendar">Дата консультации *</label>
+                    <input type="date" name="register__calendar" required="required" value="2018-01-01">
+                </div>
+                <div class="times-row__input">
+                    <label class="times-row__calendar">Дата консультации *</label>
+                    <input type="date" name="register__calendar" required="required" value="2018-01-01">
+                </div>
+                <div class="times-row__item">
+                    <button type="submit" class="register__submit">
+                        <span>Отправить</span>
+                    </button>
+                </div>
+            </div>
+            <p class="register__agreement">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь с условиями политики конфиденциальности, условиями хранения и обработки персональных данных.</p>
+        </form>
+    </div>
+    <div id="question">
+        <form action="ajax.php" name="" class="question-form">
+            <div class="question-form__title">
+                <h5>срочный вопрос</h5>
+            </div>
+            <div class="question-form__row">
+                <div class="question-form__item">
+                    <label class="question-form__name">Имя</label>
+                    <div class="question-form__item-input">
+                        <input type="text" name="contact_name" required="required" value="" placeholder="Константин">
+                    </div>
+                </div>
+                <div class="question-form__item">
+                    <label class="question-form__name">Телефон</label>
+                    <div class="question-form__item-input">
+                        <input type="text" name="contact_tel" value="" required="required" placeholder="+794444444" class="tel-mask">
+                    </div>
+                </div>
+            </div>
+            <div class="question-form__row">
+                <div class="question-form__item">
+                    <button type="submit" class="question-form__submit">
+                        <span>Отправить</span>
+                    </button>
+                </div>
+            </div>
+            <div class="question-form__row">
+                <p class="question-form__item">Нажимая кнопку «ОТПРАВИТЬ», вы соглашаетесь с условиями политики конфиденциальности, условиями хранения и обработки персональных данных.</p>
+            </div>
+        </form>
+    </div>
+    <div id="menu" class="popup-menu">
+        <div class="popup-menu__box">
+            <a class="popup-menu__button" href="#">бесплатная юридическая консультация</a>
+            <nav class="nav">
+                <ul class="nav__sub">
+                    <li class="nav__sub-head"><a href="#">Физическим лицам</a></li>
+                    <li><a href="#">Автоюрист</a></li>
+                    <li><a href="#">Договор долевого участия</a></li>
+                    <li><a href="#">Договорное право</a></li>
+                    <li><a href="#">Жилищное право</a></li>
+                    <li><a href="#">Защита от коллекторов</a></li>
+                    <li><a href="#">Защита прав потребителей</a></li>
+                    <li><a href="#">Земельное право</a></li>
+                    <li><a href="#">Исполнительное производство</a></li>
+                    <li><a href="#">Кредитные споры</a></li>
+                    <li><a href="#">Наследство</a></li>
+                    <li><a href="#">Семейное право</a></li>
+                    <li><a href="#">Социальное обеспечение</a></li>
+                    <li><a href="#">Трудовое право</a></li>
+                    <li><a href="#">Уголовное право</a></li>
+                </ul>
+                <ul class="nav__sub">
+                    <li class="nav__sub-head"><a href="#">Юридическим лицам</a></li>
+                    <li><a href="#">Бесплатная юридическая консультация</a></li>
+                    <li><a href="#">Абонентское обслуживание</a></li>
+                    <li><a href="#">Корпоративное право</a></li>
+                    <li><a href="#">Трудовое право</a></li>
+                    <li><a href="#">Бесплатная юридическая консультация</a></li>
+                    <li><a href="#">Абонентское обслуживание</a></li>
+                    <li><a href="#">Корпоративное право</a></li>
+                    <li><a href="#">Трудовое право</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>
