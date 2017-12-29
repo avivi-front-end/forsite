@@ -16,10 +16,9 @@ $(document).ready(function() {
     //paralax mouse effect
     var paralaxMain = (function () {
         $('.main').mousemove(function(e) {
-            if ($(window).width() > 1280) {
+            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
                 parallax(e, document.getElementById('c1'), 1);
             }
-            // parallax(e, document.getElementById('c2'), 1);
         });
         function parallax(e, target, layer) {
             var strength = 35;
@@ -30,13 +29,13 @@ $(document).ready(function() {
             // var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;  //centred paralax-image
             $(target).offset({
                 top: y -30,
-                left: x -250
+                left: x -200
             });
         };
     })();
     var paralaxServices = (function () {
         $('.services').mousemove(function(e) {
-            if ($(window).width() > 1280) {
+            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
                 parallax(e, document.getElementById('c2'), 1);
             }
         });
@@ -46,14 +45,14 @@ $(document).ready(function() {
             var x = (e.pageX - ($(window).width() / 2)) / layer_coeff;
             var y = (e.pageY - ($(window).height() / 2)) / layer_coeff;
             $(target).offset({
-                top: y  + 55,
+                top: y  + 35,
                 left: x -170
             });
         };
     })();
     var paralaxWhyWe = (function () {
         $('.why-we').mousemove(function(e) {
-            if ($(window).width() > 1280) {
+            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
                 parallax(e, document.getElementById('c3'), 1);
             }
         });
@@ -62,23 +61,23 @@ $(document).ready(function() {
             var layer_coeff = strength / layer;
             var x = (e.pageX - ($(window).width() / 2)) / layer_coeff;
             var y = (e.pageY - ($(window).height() / 2)) / layer_coeff;
-            if ($(window).width() > 1440) {
-                $(target).offset({
-                    top: y,
-                    left: x
-                });
-            }
             if ($(window).width() > 1360) {
                 $(target).offset({
                     top: y,
                     left: x + 250
                 });
             }
+            if ($(window).width() > 1440) {
+                $(target).offset({
+                    top: y,
+                    left: x
+                });
+            }
         };
     })();
     var paralaxContacts = (function () {
         $('.contacts').mousemove(function(e) {
-            if ($(window).width() > 1280) {
+            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
                 parallax(e, document.getElementById('c4'), 1);
             }
         });
@@ -89,16 +88,16 @@ $(document).ready(function() {
             var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;
             // console.log(layer_coeff);
             // console.log(x);
-            if ($(window).width() > 1440) {
-                $(target).offset({
-                    top: y + 250,
-                    left: x + 550
-                });
-            }
             if ($(window).width() > 1360) {
                 $(target).offset({
-                    top: y + 300,
+                    top: y + 200,
                     left: x + 450
+                });
+            }
+            if ($(window).width() > 1440) {
+                $(target).offset({
+                    top: y + 300,
+                    left: x + 550
                 });
             }
         };
