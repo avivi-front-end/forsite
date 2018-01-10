@@ -9,10 +9,14 @@ $(document).ready(function() {
         $('.register__trigger__span').toggleClass('register__visible');
         $('.jurname-row').toggleClass('register__visible');
     });
-    // delete plagin jquery pagepiling
-    destroyPageScroll();
-    // plagin jquery pagepiling
-    pageScroll();
+    // plagin jquery pagepiling (on and off)
+    (function(){
+        if ( $(window).width() > 767 ) {
+            pageScroll();
+        } else {
+            $('.del-pagepiling').remove();
+        }
+    })();
     //paralax mouse effect
     var paralaxMain = (function () {
         $('.main').mousemove(function(e) {
@@ -29,24 +33,25 @@ $(document).ready(function() {
             // var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;  //centred paralax-image
             $(target).offset({
                 top: y -30,
-                left: x -200
+                left: x -240
             });
         };
     })();
     var paralaxServices = (function () {
         $('.services').mousemove(function(e) {
             if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
-                parallax(e, document.getElementById('c2'), 1);
+                parallax(e, document.getElementById('c2'), 2);
+                parallax(e, document.getElementsByClassName('services__bg'), 1);
             }
         });
         function parallax(e, target, layer) {
-            var strength = 35;
+            var strength = 100;
             var layer_coeff = strength / layer;
             var x = (e.pageX - ($(window).width() / 2)) / layer_coeff;
             var y = (e.pageY - ($(window).height() / 2)) / layer_coeff;
             $(target).offset({
-                top: y  + 35,
-                left: x -170
+                top: y + 35, // + 35
+                left: x - 170 // - 170
             });
         };
     })();
@@ -86,8 +91,6 @@ $(document).ready(function() {
             var layer_coeff = strength / layer;
             var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff;
             var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;
-            // console.log(layer_coeff);
-            // console.log(x);
             if ($(window).width() > 1360) {
                 $(target).offset({
                     top: y + 200,
@@ -96,8 +99,14 @@ $(document).ready(function() {
             }
             if ($(window).width() > 1440) {
                 $(target).offset({
+                    top: y + 280,
+                    left: x + 450
+                });
+            }
+            if ($(window).width() > 1600) {
+                $(target).offset({
                     top: y + 300,
-                    left: x + 550
+                    left: x + 610
                 });
             }
         };
@@ -230,9 +239,4 @@ function scrollDown() {
     $("#scroll_down").click(function() {
         $.fn.pagepiling.moveSectionDown();
     });
-}
-function destroyPageScroll() {
-    if ($(window).width() < 760) {
-        $.fn.pagepiling.destroy('all');
-    }
 }

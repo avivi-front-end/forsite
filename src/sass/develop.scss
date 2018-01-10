@@ -89,10 +89,9 @@ input, textarea{
     text-align: center;
     text-decoration: none;
     font-size: 14px;
-    line-height: 1em;
     color: #2f2f2f;
     border: 1px solid #2f2f2f;
-    padding: 10px 12px;
+    padding: 10px 14px;
     height: 40px;
     box-sizing: border-box;
     cursor: pointer;
@@ -114,10 +113,11 @@ input, textarea{
     background: #ffffff;
 }
 #pp-nav span, .pp-slidesNav span {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border: 1px solid transparent;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3)
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    background-color: rgba(201, 199, 196, 0.3);
 }
 .pp-tooltip {
     top: -6px;
@@ -132,6 +132,9 @@ input, textarea{
         position: absolute;
         right: 0;
     }
+}
+#pp-nav li, .pp-slidesNav li {
+    margin: 17px 7px;
 }
 /* end change plagins styles */
 
@@ -162,9 +165,9 @@ input, textarea{
         position: relative;
         top: 0;
         display: block;
-        width: 1.25em;
+        width: 1.8em;
         height: 0.125em;
-        margin-bottom: .250em;
+        margin-bottom: 0.5em;
         background-color: #ffffff;
         transition: all 500ms;
         &:last-child {
@@ -358,13 +361,13 @@ input, textarea{
         padding: 0;
         list-style: none;
         &:nth-child(2) {
-            margin-top: 40px;
+            margin-top: 32px;
         }
         a {
             font-size: 24px;
             color: #ffffff;
             text-decoration: none;
-            line-height: 1.6em;
+            line-height: 1.5em;
             border-bottom: 1px solid transparent;
             transition: 0.3s;
             font-family: 'CenturyGothic', sans-serif;
@@ -421,6 +424,9 @@ input, textarea{
             border-radius: 3px;
             padding-left: 10px;
             font-family: 'CenturyGothic', sans-serif;
+            &::placeholder {
+                color: #ccc;
+            }
         }
     }
     &__submit {
@@ -486,6 +492,17 @@ input, textarea{
         border-radius: 3px;
         padding-left: 10px;
         font-family: 'CenturyGothic', sans-serif;
+        &::placeholder {
+            color: #ccc;
+        }
+    }
+    textarea {
+        font-family: 'CenturyGothic', sans-serif;
+        &::placeholder {
+            color: #ccc;
+            padding-left: 8px;
+            font-size: 18px;
+        }
     }
     &__row {
         display: flex;
@@ -605,6 +622,7 @@ input, textarea{
     align-items: flex-end;
     input {
         font-size: 16px;
+        color: #ccc;
     }
     &__input {
         &:nth-child(1) {
@@ -640,7 +658,6 @@ input, textarea{
     bottom: -240px;
     background: url("../images/numbers-steps.png") no-repeat;
     background-position: center;
-    //width: 710px;
 }
 .steps__slider-view .slick-dots li{
     position:relative;
@@ -655,6 +672,23 @@ input, textarea{
     background-image: url("../images/slider-progressbar-2.png");
     background-repeat:no-repeat;
     background-position-y: 3px;
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        z-index: 100;
+        width: 21px;
+        height: 12px;
+        top: 46px;
+        right: -15px;
+        background: -moz-linear-gradient(0deg, rgba(255,33,107,1) 0%, rgba(255,33,107,1) 18%, rgba(255,33,107,0) 100%); /* ff3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,33,107,1)), color-stop(18%, rgba(255,33,107,1)), color-stop(100%, rgba(255,33,107,0))); /* safari4+,chrome */
+        background: -webkit-linear-gradient(0deg, rgba(255,33,107,1) 0%, rgba(255,33,107,1) 18%, rgba(255,33,107,0) 100%); /* safari5.1+,chrome10+ */
+        background: -o-linear-gradient(0deg, rgba(255,33,107,1) 0%, rgba(255,33,107,1) 18%, rgba(255,33,107,0) 100%); /* opera 11.10+ */
+        background: -ms-linear-gradient(0deg, rgba(255,33,107,1) 0%, rgba(255,33,107,1) 18%, rgba(255,33,107,0) 100%); /* ie10+ */
+        background: linear-gradient(90deg, rgba(255,33,107,1) 0%, rgba(255,33,107,1) 18%, rgba(255,33,107,0) 100%); /* w3c */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF216B', endColorstr='#FF216B',GradientType=1 ); /* ie6-9 */
+    }
     &:nth-child(1) {
         background-image: url("../images/slider-progressbar-1.png");
         background-position-x: 4px;
@@ -680,6 +714,9 @@ input, textarea{
         background-repeat: no-repeat;
         width: 121px;
         height: 99px;
+        &:after {
+            content: none;
+        }
     }
 }
 .steps__slider-view .slick-dots li:last-child{
@@ -690,10 +727,13 @@ input, textarea{
 }
 .steps__slider-view .slick-dots li.slick-active~li{
     background-size:0% 0%;
+    &:after {
+        background-size:0% 0%;
+    }
 }
-/* -------------------------------------------- .steps-slider ----------------------------------------------------*/
+/* -------------------------------------------- END .steps-slider ----------------------------------------------------*/
 .header {
-    padding: 30px 40px 0 40px;
+    padding: 20px 40px 0 40px;
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -722,7 +762,7 @@ input, textarea{
         display: flex;
     }
     &__modal {
-        margin-top: -5px;
+        margin-top: -2px;
         color: #ffffff;
         border-color: #ffffff;
         &:hover {
@@ -735,6 +775,7 @@ input, textarea{
         color: #ffffff;
         font-size: 24px;
         margin-left: 40px;
+        margin-top: 2px;
     }
 }
 .logo {
@@ -783,16 +824,15 @@ input, textarea{
     &__img {
         position: absolute;
         top: -30px;
-        left: -200px;
-        width: 90%;
+        left: -240px;
+        width: 100%;
         img {
             width: 100%;
             height: auto;
         }
     }
     &__text {
-        margin: 29.87vh 70px;
-        margin-left: 53.5%;
+        margin: 34vh 70px 0 53.5%;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -809,12 +849,12 @@ input, textarea{
         }
     }
     &__h1 {
-        margin: 28px 0;
+        margin: 26px 0;
         line-height: 0.95em;
         font-size: 100px;
         text-transform: uppercase;
         color: #ffffff;
-        font-family: 'subset-CenturyGothic-Bold', sans-serif;
+        font-family: 'CenturyGothic-Bold', sans-serif;
     }
     &__desc {
         margin: 0;
@@ -825,6 +865,7 @@ input, textarea{
     }
     &__button {
         margin-top: 45px;
+        margin-left: 8px;
         width: 330px;
         font-size: 14px;
         color: #2f2f2f;
@@ -856,10 +897,11 @@ input, textarea{
         justify-content: space-between;
     }
     &__text {
-        padding: 14vh 40px 80px 40px;
-        width: 47%;
+        padding: 15vh 40px 80px 40px;
+        width: 44%;
         text-align: left;
         font-size: 18px;
+        line-height: 1.3em;
         background: url("../images/bird-black.png") no-repeat 90px bottom;
     }
     &__img {
@@ -867,6 +909,7 @@ input, textarea{
         img {
             width: 100%;
             height: auto;
+            max-height: 866px;
         }
     }
     &__paragraph {
@@ -878,7 +921,7 @@ input, textarea{
                 background-image: url("../images/bird-blue.png");
                 width: 25px;
                 height: 25px;
-                margin: 50px auto;
+                margin: 46px auto;
             }
             &:after {
                 content: '';
@@ -886,15 +929,15 @@ input, textarea{
                 background-image: url("../images/bird-blue.png");
                 width: 25px;
                 height: 25px;
-                margin: 50px auto;
+                margin: 46px auto;
             }
         }
-
     }
     &__button {
         display: block;
-        margin: 50px auto;
-        width: 320px;
+        margin: 46px auto;
+        width: 324px;
+        line-height: 1.2em;
         border-color: #e91e63;
         color: #e91e63;
         &:hover {
@@ -912,8 +955,16 @@ input, textarea{
     font-family: 'CenturyGothic', sans-serif;
     background: url("../images/bg-services.jpg") no-repeat;
     background-size: cover;
+    &__bg {
+        z-index: -1;
+        top: -100px;
+        position: absolute;
+        width: 120vw;
+        height: 120vh;
+        background: linear-gradient(86deg, rgba(102,255,112,1) 0%, rgba(54,195,119,1) 47%, rgba(0,128,128,1) 100%);
+    }
     &__h2 {
-        margin: 8px 0;
+        margin: 2px 0 18px;
         font-size: 100px;
         color: #ffffff;
         font-family: 'CenturyGothic-Bold', sans-serif;
@@ -985,6 +1036,7 @@ input, textarea{
         color: #e91e63;
     }
     &__img {
+        z-index: 0;
         position: absolute;
         top: 55px;
         left: -170px;
@@ -1007,16 +1059,38 @@ input, textarea{
         margin: 0 25px 0 0;
         padding: 0;
         list-style: none;
+        li {
+            position: relative;
+            width: 292px;
+            display: block;
+        }
         a {
+            padding-left: 20px;
+            position: absolute;
+            top: -30px;
             color: #6e6e6f;
             font-size: 24px;
             text-transform: uppercase;
             text-decoration: none;
             transition: all 0.8s;
+            line-height: 1em;
             &.active {
+                padding-left: 0;
                 color: #ffffff;
-                padding-left: 20px;
+                top: 0;
+                //padding-left: 20px;
             }
+        }
+    }
+    .switch__static {
+        position: relative;
+        text-align: right;
+        top: 30px;
+        right: 110px;
+        width: 272px;
+        a {
+            display: inline-block;
+            color: #ffffff;
         }
     }
     &__tab {
@@ -1024,7 +1098,10 @@ input, textarea{
             margin: 0;
             padding: 0;
         }
-        li {  list-style: none;  }
+        li {
+            list-style: none;
+            margin: 3px 0;
+        }
         a {
             color: #ffffff;
             text-decoration: none;
@@ -1038,7 +1115,7 @@ input, textarea{
         }
     }
     &__button {
-        margin-top: 10px;
+        margin-top: 6px;
         margin-left: 42.7%;
         display: inline-block;
         background: #ffffff;
@@ -1060,7 +1137,8 @@ input, textarea{
     background: url("../images/bg-why-we.jpg") no-repeat;
     background-size: cover;
     &__h2 {
-        margin: 0 0 25vh 24.5vw;
+        margin: 0 0 29vh 24.5vw;
+        line-height: 1.1em;
         display: inline-block;
         font-size: 100px;
         color: #2f2f2f;
@@ -1087,7 +1165,9 @@ input, textarea{
     &__slider {
         margin-top: 15px;
         border-top: 1px solid #000000;
+        padding-top: 2px;
         width: 450px;
+        font-size: 14px;
     }
     &__slider-nav {
         width: 450px;
@@ -1115,7 +1195,7 @@ input, textarea{
         }
     }
     &__button {
-        margin-top: 10px;
+        margin-top: 12px;
         margin-left: 480px;
         display: inline-block;
         background: transparent;
@@ -1188,6 +1268,7 @@ input, textarea{
     width: 44.27vw;
     margin: 0 auto;
     &__head {
+        text-align: center;
         margin: 40px 0 10px 0;
         font-size: 30px;
         text-transform: uppercase;
@@ -1243,13 +1324,14 @@ input, textarea{
     width: auto;
     height: 100vh;
     transform: scaleX(1.5);
+    opacity: 0.5;
 }
 .contacts {
     display: flex;
     padding-top: 110px;
     &__map {
-        height: 800px;
-        width: 1080px;
+        height: 860px;
+        width: 1075px;
         margin-right: 100px;
         filter: grayscale(1);
         //position: relative;
@@ -1269,8 +1351,8 @@ input, textarea{
 .contacts-content {
     &__h2 {
         position: relative;
-        left: -35px;
-        margin: 60px 0 60px -260px;
+        left: -20px;
+        margin: 56px 0 68px -260px;
         display: inline-block;
         font-size: 100px;
         color: #2f2f2f;
@@ -1284,7 +1366,7 @@ input, textarea{
         padding: 0;
     }
     &__box-item {
-        padding-left: 40px;
+        padding-left: 35px;
         line-height: 25px;
         background-image: url("../images/contacts-sprite.png");
         background-repeat: no-repeat;
@@ -1309,7 +1391,7 @@ input, textarea{
         margin-top: 40px;
     }
     &__from {
-        margin-right: 30px;
+        margin-right: 35px;
     }
     &__to {
         .contacts-content__rect {
@@ -1323,8 +1405,8 @@ input, textarea{
         font-size: 14px;
     }
     &__rect {
-        margin-bottom: 5px;
         span {
+            margin-right: 6px;
             display: inline-flex;
             width: 10px;
             height: 10px;
@@ -1345,6 +1427,7 @@ input, textarea{
     position: relative;
     z-index: -1;
     margin-top: -175px;
+    left: 60px;
 }
 /*------------------------------------ basic-main ----------------------------------*/
 .basic-main {
@@ -1356,7 +1439,7 @@ input, textarea{
     padding: 0 6.77vw;
     &__h1 {
         display: inline-block;
-        margin: 0 0 10px 0;
+        margin: 0 0 6px 0;
         font-size: 100px;
         text-transform: uppercase;
         color: #ffffff;
@@ -1369,11 +1452,12 @@ input, textarea{
             background: url("../images/bird-white.png") no-repeat;
             width: 357px;
             height: 363px;
-            top: -257px;
-            left: -245px;
+            top: -252px;
+            left: -202px;
         }
     }
     &__wrap {
+        padding-left: 15px;
         position: relative;
         left: 50%;
         top: 50%;
@@ -1385,6 +1469,7 @@ input, textarea{
         margin: 0;
         color: #ffffff;
         font-size: 24px;
+        line-height: 1em;
         display: inline-block;
         width: 400px;
     }
@@ -1464,6 +1549,7 @@ input, textarea{
         color: #e91e63;
         border-color: #e91e63;
         transition: 0.3s;
+        line-height: 1em;
         &:hover {
             color: #ffffff;
             background-color: #e91e63;
@@ -1483,6 +1569,10 @@ input, textarea{
 
 .autojurist-main {
     background: url("../images/auto-jurist-main.jpg") no-repeat;
+    background-size: cover;
+}
+.arbitrage-main {
+    background: url("../images/corporate-law.jpg") no-repeat;
     background-size: cover;
 }
 .share {
@@ -1547,6 +1637,11 @@ input, textarea{
 }
 /* .we-help NOT basic*/
 .corporate-law-help {
+    .basic-help__desc {
+        flex-shrink: 3;
+    }
+}
+.arbitrage-help {
     .basic-help__desc {
         flex-shrink: 3;
     }
@@ -1651,11 +1746,18 @@ input, textarea{
     width: 100%;
     height: 100vh;
     padding-top: 110px;
-    background: url("../images/bird-black.png") no-repeat;
+    background: url("../images/bird-black-reverse.png") no-repeat;
     background-position-x: right;
-    background-position-y: calc(100vh - 370px);
+    background-position-y: calc(100vh - 450px);
     font-family: 'CenturyGothic', sans-serif;
     font-size: 16px;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__head {
+        width: 26.9%;
+    }
     &__h2 {
         margin: 0 0 20px;
         font-size: 100px;
@@ -1664,25 +1766,43 @@ input, textarea{
         text-align: center;
     }
     &__text {
-        margin: 0 40px 65px 130px;
-    }
-    &__row {
-        display: flex;
+        margin: 0 40px 40px 130px;
     }
     &__h3 {
-        width: 24%;
         margin: 10px 0;
-        padding-right: 50px;
+        padding-right: 35px;
         font-size: 18px;
         text-transform: uppercase;
         text-align: right;
-        border-right: 2px solid #000000;
+        &:nth-child(1) {
+            margin-top: 15px;
+        }
+        &:nth-child(2) {
+            margin-top: 98px;
+        }
+        &:nth-child(3) {
+            margin-top: 200px;
+        }
     }
-    &__list {
-        width: 75%;
-        padding-right: 40px;
-        list-style: none;
-        margin: 20px 0;
+    &__button {
+        width: 324px;
+        margin-top: 35px;
+        margin-left: 75px;
+        display: block;
+        color: #e91e63;
+        border-color: #e91e63;
+        transition: 0.3s;
+        &:hover {
+            color: #ffffff;
+            background-color: #e91e63;
+        }
+    }
+}
+.lines {
+    width: 72%;
+    padding-right: 40px;
+    &__box {
+        position: relative;
         li {
             margin: 10px 0;
             padding-left: 25px;
@@ -1699,25 +1819,37 @@ input, textarea{
             text-decoration: none;
         }
     }
-    &__button {
-        width: 324px;
-        margin-top: 45px;
-        margin-left: calc(24% + 40px);
-        display: block;
-        color: #e91e63;
-        border-color: #e91e63;
-        transition: 0.3s;
-        &:hover {
-            color: #ffffff;
-            background-color: #e91e63;
+    &__ul {
+        list-style: none;
+        padding-left: 75px;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            border-right: 2px solid #4ea7f9;
+            height: 100%;
+            top: 0;
+        }
+        &--1 {
+            &:before {
+                border-right: 2px solid #e91e63 !important;
+                left: 24px;
+            }
+        }
+        &--2 {
+            margin: 44px 0;
+            &:before {
+                border-right: 2px solid #4ea7f9 !important;
+                left: 12px;
+            }
+        }
+        &--3 {
+            &:before {
+                border-right: 2px solid #000 !important;
+                left: 0;
+            }
         }
     }
-}
-.h3-abon-2 {
-    border-right: 2px solid #458be3;
-}
-.h3-abon-3 {
-    border-right: 2px solid #e91e63;
 }
 /*------------------------------------ END abonents-servises ----------------------------------*/
 
@@ -1801,7 +1933,10 @@ input, textarea{
         }
     }
     .basic-help {
-        &__h2 {  font-size: 80px;  }
+        &__h2 {
+            font-size: 80px;
+            margin: 110px 0 60px;
+        }
         &__box {
             padding: 0 6vw 110px 6vw;
         }
@@ -1813,6 +1948,36 @@ input, textarea{
         }
     }
     /* .we-help NOT basic*/
+    .abon-serv-help {
+        &__h3 {
+            margin: 10px 0;
+            padding-right: 35px;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-align: right;
+            &:nth-child(1) {
+                margin-top: 15px;
+            }
+            &:nth-child(2) {
+                margin-top: 110px;
+            }
+            &:nth-child(3) {
+                margin-top: 200px;
+            }
+        }
+    }
+    .lines {
+        &__box {
+            li {
+                background-position-y: 3px;
+                &:hover {
+                    background: url("../images/auto-jurist-list-hover.png") no-repeat;
+                    background-position-y: 3px;
+                }
+            }
+            a {  font-size: 16px;  }
+        }
+    }
     .corporate-law-help {
         .basic-help__list {
             li {
@@ -1869,6 +2034,7 @@ input, textarea{
     .main {
         &__img {  width: 90%;  }
         &__text {
+            margin-top: 25vh;
             margin-left: 50%;
             &:before {
                 top: -170px;
@@ -1906,10 +2072,10 @@ input, textarea{
             margin-bottom: 50px;
             margin-right: 17.5%;
         }
-        &__button {  margin-left: 50%;  }
+        &__button {  margin-left: 47%;  }
     }
     .steps {
-        &__h2 {  margin: 20px 0 10vh 0;  }
+        &__h2 {  margin: 0 0 10vh 0;  }
         &__button {  margin: 20px auto 40px;  }
         &__slider-view {
             .slick-dots {
@@ -1998,6 +2164,46 @@ input, textarea{
             }
         }
     }
+    .arbitrage-help {
+        .basic-help__desc {
+            flex-shrink: 5;
+        }
+    }
+    .abon-serv-help {
+        padding-top: 90px;
+        &__h2 {
+            font-size: 80px;
+        }
+        &__text {
+            margin: 0 40px 20px 40px;
+        }
+        &__h3 {
+            &:nth-child(1) {
+                margin-top: 15px;
+            }
+            &:nth-child(2) {
+                margin-top: 88px;
+            }
+            &:nth-child(3) {
+                margin-top: 146px;
+            }
+        }
+        &__button {
+            margin-top: 10px;
+        }
+    }
+    .lines {
+        &__box {
+            li {
+                margin: 6px 0;
+            }
+        }
+        &__ul {
+            &--2 {
+                margin: 25px 0;
+            }
+        }
+    }
 }
 @media screen and (max-width: 1440px) {
     .nav {
@@ -2066,7 +2272,7 @@ input, textarea{
         &__text {  margin-top: -20px;  }
         &__icons-text {  width: 400px;  }
         &__tabs {
-            height: 310px;
+            height: 340px;
             min-height: 310px;
             margin-left: 20.3%;
         }
@@ -2074,7 +2280,7 @@ input, textarea{
             a {  line-height: 1.4;  }
         }
         &__button {
-            margin-left: 51.7%;
+            margin-left: 50%;
         }
     }
     .why-we {
@@ -2102,12 +2308,12 @@ input, textarea{
     }
     .contacts {
         &__map {
-            height: 500px;
+            height: 600px;
             width: 700px;
         }
     }
     .contacts-content {
-        &__h2 {  margin: 25px 0 25px -160px;  }
+        &__h2 {  margin: 25px 0 25px -230px;  }
         &__img {
             width: 90%;
             margin-left: 100px;
@@ -2161,6 +2367,50 @@ input, textarea{
             flex-shrink: 5;
         }
     }
+    .abon-serv-help {
+        &__h2 {
+            margin: 0 0 20px 0;
+        }
+        &__text {
+            margin: 0 40px 20px 40px;
+            p {
+                margin: 10px 0;
+            }
+        }
+        &__h3 {
+            font-size: 16px;
+            padding-right: 10px;
+            &:nth-child(1) {
+                margin-top: 16px;
+            }
+            &:nth-child(2) {
+                margin-top: 80px;
+            }
+            &:nth-child(3) {
+                margin-top: 140px;
+            }
+        }
+        &__button {
+            margin-top: 10px;
+            margin-left: 45px;
+        }
+    }
+    .lines {
+        &__box {
+            li {
+                margin: 6px 0;
+            }
+            a {
+                font-size: 14px;
+            }
+        }
+        &__ul {
+            padding-left: 45px;
+            &--2 {
+                margin: 15px 0;
+            }
+        }
+    }
 }
 @media screen and (max-width: 1366px) {
     .main {
@@ -2168,6 +2418,9 @@ input, textarea{
         &__desc {
             font-size: 20px;
             width: 65%;
+        }
+        &__button {
+            margin-left: 0;
         }
     }
     .about {
@@ -2234,7 +2487,7 @@ input, textarea{
         width: 50%;
         &__h2 {
             font-size: 56px;
-            margin: 25px 0 25px -100px;
+            margin: 25px 0 25px -115px;
         }
         &__img {
             width: 90%;
@@ -2287,6 +2540,46 @@ input, textarea{
     .social-right-help {
         .basic-help__desc {
             flex-shrink: 3;
+        }
+    }
+    .abon-serv-help {
+        &__h2 {
+            margin: 0;
+        }
+        &__head {
+            width: 25%;
+        }
+        &__text {
+            margin: 0 20px 20px 20px;
+            p {
+                font-size: 14px;
+            }
+        }
+        &__h3 {
+            padding-left: 20px;
+            &:nth-child(1) {
+                margin-top: 16px;
+            }
+            &:nth-child(2) {
+                margin-top: 73px;
+            }
+            &:nth-child(3) {
+                margin-top: 110px;
+            }
+        }
+    }
+    .lines {
+        width: 74%;
+        &__box {
+            li {
+                margin: 0;
+            }
+        }
+        &__ul {
+            padding-left: 45px;
+            &--2 {
+                margin: 10px 0;
+            }
         }
     }
     /* iPad pro landscape */
@@ -2584,11 +2877,19 @@ input, textarea{
             margin: 45px auto;
         }
     }
+    .steps {
+        &__content {
+            top: 110px;
+            padding: 15px;
+        }
+    }
 }
 @media screen and (max-width: 760px) {
     .section {
-        //overflow: hidden;
-        overflow: visible;
+        overflow: auto;
+        display: block;
+        height: auto;
+        max-height: none;
     }
     .main {
         background-color: #b3b0aa;

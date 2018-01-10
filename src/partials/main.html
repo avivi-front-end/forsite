@@ -1,6 +1,6 @@
 <div id="pagepiling">
     //= header.html
-    <div class="section" id="section01">
+    <div class="section">
         <div class="main">
             <div class="main__img">
                 <div class="paraWrapper">
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="section" id="section02">
+    <div class="section">
         <div class="about">
             <div class="about__content">
                 <div class="about__text">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="about__img">
                     <h2 class="about__h2">о компании</h2>
-                    <img src="../images/about.jpg" alt="back to main" width="1165" height="877">
+                    <img src="../images/about.jpg" alt="about us" width="1080" height="880">
                 </div>
             </div>
         </div>
@@ -42,8 +42,9 @@
     <div class="section">
         <div class="services">
             <div class="services__img">
+                <div class="services__bg"></div>
                 <div class="paraWrapper">
-                    <img id="c2" src="../images/person-2.png" alt="" height="1324" width="1920">
+                    <img id="c2" class="paralax-img" src="../images/person-2.png" alt="" height="1324" width="1920">
                 </div>
             </div>
             <div class="services__text">
@@ -67,8 +68,9 @@
                 </div>
                 <div class="services__tabs">
                     <ul class="services__click switch__container">
-                        <li><a href="#tab1" class="switch__link active">физическим лицам</a></li>
-                        <li><a href="#tab2" class="switch__link">Юридичеким лицам</a></li>
+                        <li><a href="#tab1" class="switch__link active">физическим</a></li>
+                        <li><a href="#tab2" class="switch__link">Юридичеким</a></li>
+                        <li class="switch__static"><a>лицам</a></li>
                     </ul>
                     <div class="services__view tab-container">
                         <div class="services__tab tab" id="tab1">
@@ -146,7 +148,7 @@
     <div class="section">
         <div class="steps">
             <div class="steps__video">
-                <video id="bgvid" class="video" width="" height="" autoplay preload  muted  poster="../images/steps_video.jpg">
+                <video id="bgvid" class="video" width="" height="" autoplay preload loop muted  poster="../images/steps_video.jpg">
                     <source src="../images/steps_video.mp4" type="video/mp4" >
                     <source src="../images/steps_video.webmhd.webm" type="video/webm" >
                     <source src="../images/steps_video.oggtheora.ogv" type="video/ogv" >
@@ -228,10 +230,10 @@
                             <span></span>
                             <span></span>
                         </div>
-                        <span class="contacts-content__work-time`">с 10:00 до 19:00</span>
+                        <span class="contacts-content__work-time">с 10:00 до 19:00</span>
                     </div>
                 </div>
-                <a class="button contacts-content__button" href="#">заявка на бесплатную консультацию</a>
+                <a class="button contacts-content__button" data-fancybox data-src="#call-popup">заявка на бесплатную консультацию</a>
                 <div class="contacts-content__img">
                     <div class="paraWrapper-4">
                         <img id="c4" src="../images/person-4-1.png" alt="" height="" width="">
