@@ -1,14 +1,4 @@
 $(document).ready(function() {
-    // btn closed menu
-    // $('#js-btn--menu').click(function() {
-    //     $(this).toggleClass('is-active') ;
-    // });
-    // modal window toggle
-    $('.js-register-switch').click(function(){
-        $(this).toggleClass('register__visible');
-        $('.register__trigger__span').toggleClass('register__visible');
-        $('.jurname-row').toggleClass('register__visible');
-    });
     // plagin jquery pagepiling (on and off)
     (function(){
         if ( $(window).width() > 767 ) {
@@ -17,100 +7,39 @@ $(document).ready(function() {
             $('.del-pagepiling').remove();
         }
     })();
-    //paralax mouse effect
-    var paralaxMain = (function () {
-        $('.main').mousemove(function(e) {
-            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
-                parallax(e, document.getElementById('c1'), 1);
-            }
-        });
-        function parallax(e, target, layer) {
-            var strength = 35;
-            var layer_coeff = strength / layer;
-            var x = (e.pageX - ($(window).width() / 2)) / layer_coeff;
-            var y = (e.pageY - ($(window).height() / 2)) / layer_coeff;
-            // var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff;  //centred paralax-image
-            // var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;  //centred paralax-image
-            $(target).offset({
-                top: y -30,
-                left: x -240
+    //parallax
+    (function(){
+        if ($('#main-parallax').length > 0) {
+            mainParallax();
+            console.log("wdwrwerew")
+        }
+    })();
+    (function(){
+        if ($('#scene').length > 0 ) {
+            servicesParallax();
+        }
+    })();
+    (function(){
+        if ($('#why-we-parallax').length > 0 ) {
+            whyWeParallax();
+        }
+    })();
+    (function(){
+        if ($('#contacts-parallax').length > 0 ) {
+            contactsParallax();
+        }
+    })();
+    // modal window toggle
+    $('.js-register-switch').click(function(){
+        $(this).toggleClass('register__visible');
+        $('.register__trigger__span').toggleClass('register__visible');
+        $('.jurname-row').toggleClass('register__visible');
+        if($(this).find(".register__visible")) {
+            $('.select-ooo').styler({
+                selectSmartPositioning: false
             });
-        };
-    })();
-    var paralaxServices = (function () {
-        $('.services').mousemove(function(e) {
-            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
-                parallax(e, document.getElementById('c2'), 2);
-                parallax(e, document.getElementsByClassName('services__bg'), 1);
-            }
-        });
-        function parallax(e, target, layer) {
-            var strength = 100;
-            var layer_coeff = strength / layer;
-            var x = (e.pageX - ($(window).width() / 2)) / layer_coeff;
-            var y = (e.pageY - ($(window).height() / 2)) / layer_coeff;
-            $(target).offset({
-                top: y + 35, // + 35
-                left: x - 170 // - 170
-            });
-        };
-    })();
-    var paralaxWhyWe = (function () {
-        $('.why-we').mousemove(function(e) {
-            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
-                parallax(e, document.getElementById('c3'), 1);
-            }
-        });
-        function parallax(e, target, layer) {
-            var strength = 35;
-            var layer_coeff = strength / layer;
-            var x = (e.pageX - ($(window).width() / 2)) / layer_coeff;
-            var y = (e.pageY - ($(window).height() / 2)) / layer_coeff;
-            if ($(window).width() > 1360) {
-                $(target).offset({
-                    top: y,
-                    left: x + 250
-                });
-            }
-            if ($(window).width() > 1440) {
-                $(target).offset({
-                    top: y,
-                    left: x
-                });
-            }
-        };
-    })();
-    var paralaxContacts = (function () {
-        $('.contacts').mousemove(function(e) {
-            if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
-                parallax(e, document.getElementById('c4'), 1);
-            }
-        });
-        function parallax(e, target, layer) {
-            var strength = 100;
-            var layer_coeff = strength / layer;
-            var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff;
-            var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;
-            if ($(window).width() > 1360) {
-                $(target).offset({
-                    top: y + 200,
-                    left: x + 450
-                });
-            }
-            if ($(window).width() > 1440) {
-                $(target).offset({
-                    top: y + 280,
-                    left: x + 450
-                });
-            }
-            if ($(window).width() > 1600) {
-                $(target).offset({
-                    top: y + 300,
-                    left: x + 610
-                });
-            }
-        };
-    })();
+        }
+    });
     scrollDown();
     //tabs
     tabSwitcher();
@@ -118,13 +47,48 @@ $(document).ready(function() {
     sliderWhyWe ();
     //slider steps
     stepsSlider ();
-    // scroll plagin for menu init
-    $(window).on("load",function(){
-        $(".nav").mCustomScrollbar({});
-    });
     //yandex map
     ymaps.ready(init);
     var myMap, myPlacemark;
+    //formstyler for select
+    // $('.select-ooo').styler();
+    $('.select-theme').styler({
+        selectSearch: true,
+        selectSearchLimit: 2,
+        selectSearchPlaceholder: 'Начните вводить',
+        selectSmartPositioning: false,
+        selectPlaceholder: 'Начните вводить'
+    });
+    // submit forms modal window
+    $(document).on("submit", ".question-form", function(e){
+        e.preventDefault();
+        var closeButton = $(this).closest("#question").find(".fancybox-close-small");
+        $.ajax({
+            url: 'question-form-ajax.php',
+            data: $(this).serialize(),
+            dataType: "html",
+            type: 'POST',
+            success: function(html){
+                closeButton.trigger("click");
+                setTimeout(popNext("#call_success", "call-popup"), 1500);
+            }
+        });
+    });
+    $(document).on("submit", ".register", function(e){
+        e.preventDefault();
+        var closeButton = $(this).closest("#call-popup").find(".fancybox-close-small");
+        console.log($(this).serialize() + "&person=" + person);
+        $.ajax({
+            url: 'question-form-ajax.php',
+            data: $(this).serialize() + "&person=" + person,
+            dataType: "html",
+            type: 'POST',
+            success: function(html){
+                closeButton.trigger("click");
+                setTimeout(popNext("#call_success", "call-popup"), 1500);
+            }
+        });
+    });
 });
 function pageScroll() {
     $('#pagepiling').pagepiling({
@@ -239,4 +203,33 @@ function scrollDown() {
     $("#scroll_down").click(function() {
         $.fn.pagepiling.moveSectionDown();
     });
+}
+// scroll plagin for menu init
+$(window).on("load",function(){
+    $(".nav").mCustomScrollbar({});
+});
+function mainParallax(){
+    if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
+        var main = document.getElementById('main-parallax');
+        var parallax = new Parallax(main);
+    }
+}
+function servicesParallax(){
+    if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+    }
+}
+function whyWeParallax(){
+    if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
+        var whyWe = document.getElementById('why-we-parallax');
+        var parallax = new Parallax(whyWe);
+        console.log('I working')
+    }
+}
+function contactsParallax(){
+    if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
+        var contacts = document.getElementById('contacts-parallax');
+        var parallax = new Parallax(contacts);
+    }
 }

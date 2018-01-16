@@ -1,10 +1,8 @@
 <div class="hidden-block">
     <div id="call_success">
         <div class="call-success">
-             <div class="call_success">
-                 <div class="call-title">Спасибо за заявку!</div>
-                 <div class="call-subtitle">Мы свяжемся с Вами в ближайшее время</div>
-             </div>
+            <div class="call-title">Спасибо за обращение в нашу компанию, мы свяжемся с вами в ближайшее время</div>
+            <button class="call-success__close" data-fancybox-close>OK</button>
         </div>
     </div>
     <div id="call-popup" class="register-modal">
@@ -23,7 +21,11 @@
             <div class="jurname-row">
                 <div class="jurname-row__input">
                     <label class="jurname-row__type">опф *</label>
-                    <input type="text" name="register__first-name" required="required" value="" placeholder="OOO">
+                    <!--<input type="text" name="register__first-name" required="required" value="" placeholder="OOO">-->
+                    <select class="select-ooo">
+                        <option>ООО</option>
+                        <option>ПАО</option>
+                    </select>
                 </div>
                 <div class="jurname-row__input">
                     <label class="jurname-row__name">наименование *</label>
@@ -47,7 +49,7 @@
             <div class="contacts-row register__row">
                 <div class="contacts-row__input">
                     <label class="contacts-row__tel">телефон *</label>
-                    <input type="tel" name="register__tel" required="required" value="" placeholder="+7 999 999 99 99">
+                    <input type="tel" name="register__tel" class="tel-mask" required="required" value="" placeholder="+7 999 999 99 99">
                 </div>
                 <div class="contacts-row__input">
                     <label class="contacts-row__email">Email *</label>
@@ -57,7 +59,14 @@
             <div class="message-type-row">
                 <div class="message-type-row__input">
                     <label class="message-type-row__type">тематика обращения *</label>
-                    <input type="text" name="register__mess-type" required="required" value="" placeholder="Начните вводить">
+                    <!--<input type="text" name="register__mess-type" required="required" value="" placeholder="Начните вводить">-->
+                    <select class="select-theme">
+                        <option></option> <!-- должен быть пуст! -->
+                        <option>Пункт 1</option>
+                        <option>Пункт 2</option>
+                        <option>Пункт 3</option>
+                        <option>Пункт 4</option>
+                    </select>
                 </div>
             </div>
             <div class="message-row">
@@ -117,35 +126,31 @@
     </div>
     <div id="menu" class="popup-menu">
         <div class="popup-menu__box">
-            <a class="popup-menu__button" href="#">бесплатная юридическая консультация</a>
+            <a class="popup-menu__button" data-fancybox data-src="#call-popup">бесплатная юридическая консультация</a>
             <nav class="nav">
                 <ul class="nav__sub">
                     <li class="nav__sub-head"><a href="#">Физическим лицам</a></li>
-                    <li><a href="#">Автоюрист</a></li>
-                    <li><a href="#">Договор долевого участия</a></li>
-                    <li><a href="#">Договорное право</a></li>
-                    <li><a href="#">Жилищное право</a></li>
-                    <li><a href="#">Защита от коллекторов</a></li>
-                    <li><a href="#">Защита прав потребителей</a></li>
-                    <li><a href="#">Земельное право</a></li>
-                    <li><a href="#">Исполнительное производство</a></li>
-                    <li><a href="#">Кредитные споры</a></li>
-                    <li><a href="#">Наследство</a></li>
-                    <li><a href="#">Семейное право</a></li>
-                    <li><a href="#">Социальное обеспечение</a></li>
-                    <li><a href="#">Трудовое право</a></li>
-                    <li><a href="#">Уголовное право</a></li>
+                    <li><a href="auto-jurist.html">Автоюрист</a></li>
+                    <li><a href="share.html">Договор долевого участия</a></li>
+                    <li><a href="contractual-right.html">Договорное право</a></li>
+                    <li><a href="housing-law.html">Жилищное право</a></li>
+                    <li><a href="collector.html">Защита от коллекторов</a></li>
+                    <li><a href="consumer.html">Защита прав потребителей</a></li>
+                    <li><a href="land-law.html">Земельное право</a></li>
+                    <li><a href="executor.html">Исполнительное производство</a></li>
+                    <li><a href="credit.html">Кредитные споры</a></li>
+                    <li><a href="legacy.html">Наследство</a></li>
+                    <li><a href="family-law.html">Семейное право</a></li>
+                    <li><a href="social-right.html">Социальное обеспечение</a></li>
+                    <li><a href="labor-law.html">Трудовое право</a></li>
+                    <li><a href="criminal-law.html">Уголовное право</a></li>
                 </ul>
                 <ul class="nav__sub">
                     <li class="nav__sub-head"><a href="#">Юридическим лицам</a></li>
-                    <li><a href="#">Бесплатная юридическая консультация</a></li>
-                    <li><a href="#">Абонентское обслуживание</a></li>
-                    <li><a href="#">Корпоративное право</a></li>
-                    <li><a href="#">Трудовое право</a></li>
-                    <li><a href="#">Бесплатная юридическая консультация</a></li>
-                    <li><a href="#">Абонентское обслуживание</a></li>
-                    <li><a href="#">Корпоративное право</a></li>
-                    <li><a href="#">Трудовое право</a></li>
+                    <li><a data-fancybox data-src="#call-popup">Бесплатная юридическая консультация</a></li>
+                    <li><a href="abonents-servises.html">Абонентское обслуживание</a></li>
+                    <li><a href="corporate-law.html">Корпоративное право</a></li>
+                    <li><a href="labor-law.html">Трудовое право</a></li>
                 </ul>
             </nav>
         </div>

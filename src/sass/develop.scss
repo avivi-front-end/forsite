@@ -354,7 +354,7 @@ input, textarea{
 .nav {
     width: 545px;
     margin-right: -210px;
-    max-height: 690px;
+    max-height: 660px;
     position: relative;
     &__sub {
         margin: 0 auto;
@@ -410,7 +410,7 @@ input, textarea{
     }
     &__name {
         text-align: right;
-        width: 90px;
+        width: 82px;
         margin-right: 10px;
         font-size: 18px;
         text-transform: uppercase;
@@ -418,7 +418,7 @@ input, textarea{
     }
     &__item-input {
         input {
-            width: 160px;
+            width: 170px;
             font-size: 18px;
             border: 1px solid #cfcfcf;
             border-radius: 3px;
@@ -464,6 +464,7 @@ input, textarea{
     display: none;
     &__input {
         &:nth-child(1) {
+            width: 160px;
             margin-right: 20px;
         }
         &:nth-child(2) {
@@ -473,6 +474,16 @@ input, textarea{
             }
         }
     }
+}
+.select-ooo {
+    width: 160px;
+    height: 26px;
+    color: #000;
+}
+.select-theme {
+    width: 100%;
+    height: 26px;
+    color: #000;
 }
 .register {
     label {
@@ -640,6 +651,107 @@ input, textarea{
         }
     }
 }
+.call-success {
+    width: 320px;
+    &__close {
+        display: block;
+        margin: 20px auto 0;
+        width: 320px;
+        background-color: #e91e63;
+        padding: 8px;
+        color: #ffffff;
+        border: 1px solid transparent;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'CenturyGothic-Bold', sans-serif;
+        text-decoration: none;
+    }
+}
+.jq-selectbox {
+    font-family: 'CenturyGothic', sans-serif;
+    &__text {
+        color: #000;
+        height: 26px;
+    }
+    &__select-text {
+        width: 100% !important;
+        color: #ccc;
+    }
+    &__trigger {
+        width: 16px;
+        height: 26px;
+        border: none;
+    }
+    &__trigger-arrow {
+        top: 8px;
+        right: 10px;
+        width: 8px;
+        height: 8px;
+        border: none;
+        background: url("../images/down-arrow.png") no-repeat;
+        background-size: contain;
+    }
+    &__select {
+        height: 26px;
+        padding: 0 45px 0 10px;
+        background-color: #fff;
+        background: linear-gradient(#fff, #fff);
+        border: 1px solid #CCC;
+        border-bottom-color: #B3B3B3;
+        text-shadow: none;
+        box-shadow: none;
+        font-size: 16px;
+        line-height: 26px;
+        outline: none;
+        &:hover {
+            color: #000;
+            background-color: #fff;
+            background: linear-gradient(#fff, #fff);
+        }
+        &:active {
+            color: #000;
+            background-color: #fff;
+            background: linear-gradient(#fff, #fff);
+        }
+    }
+    &__search {
+        width: 100%;
+        position: absolute;
+        top: -29px;
+        margin: 0;
+        height: 26px;
+        background: #fff;
+        outline: none;
+        input {
+            padding: 0;
+            background-image: none;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+    }
+    li {
+        &:hover {
+            background-color: #ccc;
+            color: #000;
+        }
+        &.selected {
+            background-color: #fff;
+            color: #000;
+            &:hover {
+                background-color: #ccc;
+            }
+        }
+    }
+    .placeholder {
+        color: #ccc;
+        font-size: 18px;
+        font-family: 'CenturyGothic', sans-serif;
+    }
+}
+.jq-checkbox.focused, .jq-radio.focused, .jq-file.focused .jq-file__name, .jq-number.focused .jq-number__field, .jq-selectbox.focused .jq-selectbox__select, .jq-select-multiple.focused {
+    border: 1px solid #cfcfcf;
+}
 /* END modal windows */
 
 #mCSB_1_dragger_vertical, .mCSB_dragger {
@@ -754,9 +866,6 @@ input, textarea{
         img {
             position: absolute
         }
-        //margin-right: 59.635%;
-        //min-width: 261px;
-        //height: 70px;
     }
     &__right {
         display: flex;
@@ -782,7 +891,10 @@ input, textarea{
     &__black {
         opacity: 0;
     }
-    img {  width: 100%;  height: auto;  }
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 .header-black {
     .logo {
@@ -823,12 +935,29 @@ input, textarea{
     color: #ffffff;
     &__img {
         position: absolute;
-        top: -30px;
-        left: -240px;
-        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         img {
             width: 100%;
             height: auto;
+        }
+    }
+    &__person {
+        img {
+            position: relative;
+            top: -35px;
+            left: -245px;
+        }
+    }
+    &__bg-person {
+        width: 110vw;
+        img {
+            opacity: 0.2;
+            position: relative;
+            top: -50px;
+            left: -50px;
         }
     }
     &__text {
@@ -865,7 +994,6 @@ input, textarea{
     }
     &__button {
         margin-top: 45px;
-        margin-left: 8px;
         width: 330px;
         font-size: 14px;
         color: #2f2f2f;
@@ -953,16 +1081,8 @@ input, textarea{
     padding-top: 105px;
     overflow: hidden;
     font-family: 'CenturyGothic', sans-serif;
-    background: url("../images/bg-services.jpg") no-repeat;
+    //background: url("../images/bg-services.jpg") no-repeat;
     background-size: cover;
-    &__bg {
-        z-index: -1;
-        top: -100px;
-        position: absolute;
-        width: 120vw;
-        height: 120vh;
-        background: linear-gradient(86deg, rgba(102,255,112,1) 0%, rgba(54,195,119,1) 47%, rgba(0,128,128,1) 100%);
-    }
     &__h2 {
         margin: 2px 0 18px;
         font-size: 100px;
@@ -1038,11 +1158,28 @@ input, textarea{
     &__img {
         z-index: 0;
         position: absolute;
-        top: 55px;
-        left: -170px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         img {
             width: 100%;
             height: auto;
+        }
+    }
+    &__bg-person {
+        width: 110vw;
+        img {
+            position: relative;
+            top: -50px;
+            left: -50px;
+        }
+    }
+    &__person {
+        img {
+            position: relative;
+            top: 30px;
+            left: -120px;
         }
     }
     &__text {
@@ -1078,7 +1215,6 @@ input, textarea{
                 padding-left: 0;
                 color: #ffffff;
                 top: 0;
-                //padding-left: 20px;
             }
         }
     }
@@ -1134,7 +1270,7 @@ input, textarea{
     padding-top: 70px;
     overflow: hidden;
     font-family: 'CenturyGothic', sans-serif;
-    background: url("../images/bg-why-we.jpg") no-repeat;
+    //background: url("../images/bg-why-we.jpg") no-repeat;
     background-size: cover;
     &__h2 {
         margin: 0 0 29vh 24.5vw;
@@ -1150,9 +1286,25 @@ input, textarea{
         position: absolute;
         top: 0;
         left: 0;
+        bottom: 0;
+        right: 0;
         img {
             width: 100%;
             height: auto;
+        }
+    }
+    &__bg-person {
+        width: 110vw;
+        img {
+            position: relative;
+            top: -50px;
+            left: -50px;
+        }
+    }
+    &__person {
+        img {
+            position: relative;
+            top: -20px;
         }
     }
     &__text {
@@ -1295,29 +1447,6 @@ input, textarea{
         cursor: pointer;
         font-family: 'CenturyGothic-Bold', sans-serif;
         position: relative;
-        //&:before {
-        //    content: '';
-        //    position: absolute;
-        //    display: block;
-        //    left: -60px;
-        //    top: 14px;
-        //    width: 60px;
-        //    height: 24px;
-        //    background-color: #e91e63;
-        //}
-        //&:after {
-        //    content: '';
-        //    position: absolute;
-        //    display: block;
-        //    left: -15px;
-        //    top: 11px;
-        //    width: 20px;
-        //    height: 30px;
-        //    background-color: transparent;
-        //    border-right: 20px solid #e91e63;
-        //    border-top: 10px solid transparent;
-        //    border-bottom: 10px solid transparent;
-        //}
     }
 }
 .video {
@@ -1334,18 +1463,34 @@ input, textarea{
         width: 1075px;
         margin-right: 100px;
         filter: grayscale(1);
-        //position: relative;
-        //&:after {
-        //    content: '';
-        //    position: absolute;
-        //    top: 0;
-        //    left: 0;
-        //    right: 0;
-        //    bottom: 0;
-        //    background: #000000;
-        //    opacity: 0.3;
-        //    z-index: 1;
-        //}
+    }
+    &__img {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__bg-person {
+        width: 110vw;
+        img {
+            opacity: 0.05;
+            position: relative;
+            top: -50px;
+            left: -50px;
+        }
+    }
+    &__person {
+        img {
+            position: relative;
+            top: -175px;
+            right: -5px;
+        }
     }
 }
 .contacts-content {
@@ -1422,12 +1567,6 @@ input, textarea{
             color: #ffffff;
         }
     }
-}
-.paraWrapper-4 {
-    position: relative;
-    z-index: -1;
-    margin-top: -175px;
-    left: 60px;
 }
 /*------------------------------------ basic-main ----------------------------------*/
 .basic-main {
@@ -2032,7 +2171,12 @@ input, textarea{
 }
 @media screen and (max-width: 1600px) {
     .main {
-        &__img {  width: 90%;  }
+        &__person {
+            width: 90%;
+            img {
+                left: -160px;
+            }
+        }
         &__text {
             margin-top: 25vh;
             margin-left: 50%;
@@ -2063,7 +2207,13 @@ input, textarea{
 
     }
     .services {
-        &__img {  width: 90%;  }
+        &__person {
+            width: 90%;
+            img {
+                top: 50px;
+                left: -90px;
+            }
+        }
         &__h2 {
             margin: 0;
             font-size: 80px;
@@ -2087,6 +2237,15 @@ input, textarea{
         &__head {
             margin: 30px 0 15px 0;
             font-size: 30px;
+        }
+    }
+    .why-we {
+        &__person {
+            img {
+                width: 90%;
+                top: 50px;
+                left: 200px;
+            }
         }
     }
     .contacts {
@@ -2290,10 +2449,6 @@ input, textarea{
             text-align: center;
             font-size: 80px;
         }
-        &__img {
-            margin-left: 250px;
-            width: 90%;
-        }
     }
     .steps {
         &__h2 {  margin: 0 0 5vh 0;  }
@@ -2437,6 +2592,12 @@ input, textarea{
         }
     }
     .services {
+        &__person {
+            img {
+                top: 80px;
+                left: -100px;
+            }
+        }
         &__h2 {
             font-size: 56px;
             margin-bottom: 10px;
@@ -2458,9 +2619,11 @@ input, textarea{
             font-size: 56px;
             margin: 50px auto 12vh;
         }
-        &__img {
-            margin-left: 250px;
-            width: 90%;
+        &__person {
+            img {
+                top: 30px;
+                left: 230px;
+            }
         }
         &__slider-nav-item {
             font-size: 22px;
@@ -2584,15 +2747,55 @@ input, textarea{
     }
     /* iPad pro landscape */
     .ipad.tablet.landscape {
-        .services__img {
-            top: auto;
-            left: -60px;
-            bottom: 0;
+        .main {
+            background: #b3b0aa;
+            &__person {
+                img {
+                    top: auto;
+                    left: -160px;
+                    bottom: 0;
+                }
+            }
+            &__bg-person {
+                display: none;
+            }
         }
-        .why-we__img {
-            top: auto;
-            left: auto;
-            bottom: 0;
+        .services {
+            background: url("../images/bg-services.jpg") no-repeat;
+            &__img {
+                top: auto;
+                left: 0;
+                bottom: 0;
+            }
+            &__bg-person {
+                display: none;
+            }
+            &__h2 {
+                margin-top: 3vh;
+                margin-bottom: 30px;
+            }
+        }
+        .why-we {
+            background: url("../images/bg-why-we.jpg") no-repeat;
+            &__img {
+                top: auto;
+                left: auto;
+                bottom: 0;
+            }
+            &__person {
+                img {
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+            &__bg-person {
+                display: none;
+            }
+        }
+        .steps {
+            &__h2 {
+                margin: 5vh 0 10vh 0;
+            }
         }
         .video {
             width: auto;
@@ -2601,16 +2804,28 @@ input, textarea{
         .contacts {
             padding-top: 260px;
             height: 100vh;
+            background: transparent;
+            &__img {
+                display: flex;
+                align-items: flex-end;
+            }
+            &__bg-person {
+                display: none;
+            }
+            &__person {
+                img {
+                    top: auto;
+                    bottom: 0;
+                }
+            }
         }
     }
     /* iPad pro landscape */
 }
 @media screen and (max-width: 1280px) {
     .main {
-        &__img {
-            top: 120px;
-            left: -85px;
-            width: 80%;
+        &__bg-person {
+            display: none;
         }
     }
     .about {
@@ -2619,34 +2834,55 @@ input, textarea{
         }
     }
     .services {
-        &__img {
-            width: 80%;
-            top: auto;
+        background: url("../images/bg-services.jpg") no-repeat;
+        padding-top: 90px;
+        &__bg-person {
+            display: none;
+        }
+        &__person {
+            position: absolute;
             bottom: 0;
-            left: -20px;
         }
         &__text {
-            margin-top: 5vh;
+            margin-top: 0;
         }
     }
     .why-we {
-        &__img {
-            margin-left: 0;
-            top: auto;
-            left: auto;
-            right: -60px;
+        background: url("../images/bg-services.jpg") no-repeat;
+        &__bg-person {
+            display: none;
+        }
+        &__parallax {
+            position: relative;
+            height: 100vh;
+        }
+        &__person {
+            position: absolute;
             bottom: 0;
-            width: 80%;
+            img {
+                width: 80%;
+                left: 320px;
+                bottom: 0;
+            }
         }
         &__h2 {  margin: 7vh auto 10vh;  }
     }
     .contacts {
-        padding-top: 200px;
-    }
-    .contacts-content {
-        &__img {
-            width: 80%;
-            margin-left: 80px;
+        padding-top: 120px;
+        &__bg-person {
+            display: none;
+        }
+        &__parallax {
+            position: relative;
+            height: 100vh;
+        }
+        &__person {
+            position: absolute;
+            bottom: 0;
+            img {
+                top: auto;
+                bottom: 0;
+            }
         }
     }
     .basic-help {
@@ -2658,9 +2894,6 @@ input, textarea{
         &__button {
             bottom: -40px;
         }
-    }
-    .paraWrapper-4 {
-        margin-top: -110px;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -2686,10 +2919,21 @@ input, textarea{
     /* iPad pro portrait */
     .ipad.tablet.portrait {
         .main {
+            background: #b3b0aa;
+            &__person {
+                img {
+                    top: auto;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+            &__bg-person {
+                display: none;
+            }
             &__img {
-                top: 360px;
-                left: -200px;
-                width: 100%;
+                top: auto;
+                bottom: 0;
+                left: 0;
             }
             &__text {
                 margin: 33vh 70px;
@@ -2716,24 +2960,64 @@ input, textarea{
             }
         }
         .services {
+            background: url("../images/bg-services.jpg") no-repeat;
+            background-size: cover;
             &__img {
-                width: 100%;
-                top: auto;
+                top: 0;
                 left: 0;
+                right: 0;
                 bottom: 0;
             }
+            &__bg-person {
+                display: none;
+            }
+            &__person {
+                img {
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+            &__h2 {
+                margin-bottom: 30px;
+            }
+            &__icons {
+                margin-bottom: 90px;
+            }
             &__text {
-                margin-top: 5vh;
+                margin-top: 10vh;
+            }
+            &__tabs {
+                height: 380px;
             }
         }
         .why-we {
+            background: url("../images/bg-why-we.jpg") no-repeat;
+            background-size: cover;
             &__img {
-                width: 100%;
-                margin-left: 60px;
-                top: auto;
+                top: 0;
+                left: 0;
+                right: 0;
                 bottom: 0;
             }
-            &__h2 {  margin: 5vh auto 10vh;  }
+            &__parallax {
+                position: relative;
+                height: 100vh;
+            }
+            &__bg-person {
+                display: none;
+            }
+            &__person {
+                position: absolute;
+                bottom: 0;
+                img {
+                    top: auto;
+                    bottom: 0;
+                    right: 0;
+                    left: 240px;
+                }
+            }
+            &__h2 {  margin: 12vh auto 10vh;  }
             &__text {
                 padding-left: 40px;
                 padding-right: 40px;
@@ -2741,6 +3025,9 @@ input, textarea{
         }
         .steps {
             padding-top: 110px;
+            &__h2 {
+                margin: 5vh 0 10vh 0;;
+            }
         }
         .video {
             width: auto;
@@ -2751,7 +3038,30 @@ input, textarea{
             flex-direction: column-reverse;
             justify-content: space-between;
             align-items: center;
-            //padding: 110px 15vw 0;
+            &__img {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 500px;
+                height: calc(100vh - 500px);
+            }
+            &__parallax {
+                height: calc(100vh - 500px);
+                position: relative;
+            }
+            &__bg-person {
+                display: none;
+            }
+            &__person {
+                position: absolute;
+                bottom: 0;
+                img {
+                    top: auto;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                }
+            }
             &__map {
                 width: 100%;
                 margin: 0;
@@ -2767,18 +3077,27 @@ input, textarea{
                 display: block;
                 text-align: center;
             }
-            &__img {
-                //display: none;
-            }
         }
     }
     /* iPad pro portrait */
 
     /* iPad landscape */
     .ipad.tablet.landscape {
+        .main {
+            &__person {
+                img {
+                    left: 0;
+                }
+            }
+        }
         .about__img {
             width: 50%;
             padding-top: 20px;
+        }
+        .services {
+            &__icons {
+                margin-bottom: 70px;
+            }
         }
         .contacts {
             padding-top: 170px;
@@ -2883,6 +3202,65 @@ input, textarea{
             padding: 15px;
         }
     }
+}
+@media screen and (max-width: 768px) {
+    /* iPad portrait */
+    .ipad.tablet.portrait {
+        .main {
+            &__img {
+                display: none;
+            }
+            &__text {
+                margin: 33vh auto;
+                margin-left: 33%;
+                width: 84%;
+                &:before {
+                    top: -150px;
+                    left: -150px;
+                    width: 200px;
+                    height: 205px;
+                }
+            }
+        }
+        .services {
+            &__h2 {
+                margin-bottom: 30px;
+            }
+            &__img {
+                display: none;
+            }
+            &__icons {
+                margin-bottom: 100px;
+            }
+            &__tabs {
+                height: 380px;
+            }
+        }
+        .why-we {
+            &__img {
+                display: none;
+            }
+        }
+        .steps {
+            padding-top: 110px;
+            &__h2 {
+                margin: 5vh 0 10vh 0;;
+            }
+        }
+        .video {
+            width: auto;
+            height: 100vh;
+        }
+        .contacts {
+            &__img {
+                display: none;
+            }
+        }
+        .contacts-content {
+            padding: 0 12%;
+        }
+    }
+    /* iPad portrait */
 }
 @media screen and (max-width: 760px) {
     .section {
