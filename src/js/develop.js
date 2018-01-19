@@ -43,10 +43,9 @@ $(document).ready(function() {
     scrollDown();
     //tabs
     tabSwitcher();
-    //slider why-we
     sliderWhyWe ();
-    //slider steps
     stepsSlider ();
+    headerMobile();
     //yandex map
     ymaps.ready(init);
     var myMap, myPlacemark;
@@ -134,9 +133,7 @@ function pageScroll() {
 function tabSwitcher(){
     var $btn = $('.switch__link');
     var $tab = $('.tab');
-
     $('#tab2').css('display','none');
-
     $btn.on('click', function(e){
         e.preventDefault();
         var $tabId = $(this).attr('href');
@@ -161,7 +158,22 @@ function sliderWhyWe () {
         asNavFor: '.why-we__slider',
         dots: false,
         focusOnSelect: true,
-        vertical: true
+        vertical: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 9
+                }
+            },
+            {
+                breakpoint: 375,
+                settings: {
+                    slidesToShow: 8,
+                    arrows: false
+                }
+            }
+        ]
     });
 }
 function stepsSlider () {
@@ -171,16 +183,9 @@ function stepsSlider () {
         arrows: false,
         dots: true,
         fade: true,
-        // asNavFor: '.steps__slider-nav',
-        cssEase: 'linear'
+        cssEase: 'linear',
+        infinite: false
     });
-    // $('.steps__slider-nav').slick({
-    //     slidesToShow: 6,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.steps__slider-view',
-    //     focusOnSelect: true,
-    //     dots: false
-    // });
 }
 //yandex map
 function init(){
@@ -189,15 +194,12 @@ function init(){
         controls: [], // remove all controls elements
         zoom: 15
     });
-
     myPlacemark = new ymaps.Placemark([59.940654, 30.262445], {
         hintContent: 'Форсайт',
         balloonContent: 'г. Санкт-Петербург, 18-я линия В.О., дом 45'
     });
-
     myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects.add(myPlacemark);
-
 }
 function scrollDown() {
     $("#scroll_down").click(function() {
@@ -231,5 +233,17 @@ function contactsParallax(){
     if ($(window).width() > 1280 && $("html").is(".ipad")!==true) {
         var contacts = document.getElementById('contacts-parallax');
         var parallax = new Parallax(contacts);
+    }
+}
+function headerMobile() {
+    if( $(window).width() <= 767 ) {
+        $(window).on('scroll',function(){
+            if ($(this).scrollTop() > 300) {
+                $('.header').css({"background-color": "#fff", "padding": "10px", "transition": "0.5s"}).addClass('header-black');
+            }
+            else {
+                $('.header').css({"background-color": "transparent", "padding": "10px", "transition": "0.5s"}).removeClass('header-black');
+            }
+        });
     }
 }
