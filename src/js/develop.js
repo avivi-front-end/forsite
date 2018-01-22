@@ -11,7 +11,6 @@ $(document).ready(function() {
     (function(){
         if ($('#main-parallax').length > 0) {
             mainParallax();
-            console.log("wdwrwerew")
         }
     })();
     (function(){
@@ -90,6 +89,17 @@ $(document).ready(function() {
     });
 });
 function pageScroll() {
+    var tooltipsArrMain = ['Главная', 'О компании', 'Услуги', 'Почему мы', 'Этапы работы', 'Контакты'];
+    var tooltipsArrOther = ['Главная', 'О компании', 'Почему мы', 'Этапы работы', 'Контакты'];
+    var tooltip = (function(){
+        if ( $(document).find('.section').length > 5 ) {
+            console.log('section > 5');
+            return tooltipsArrMain
+        } else {
+            console.log('section <<< 5');
+            return tooltipsArrOther
+        }
+    })();
     $('#pagepiling').pagepiling({
         menu: null,
         direction: 'vertical',
@@ -105,7 +115,7 @@ function pageScroll() {
             'textColor': '#fff',
             'bulletsColor': 'rgba(0, 0, 0, 0.3)',
             'position': 'right',
-            'tooltips': ['Главная', 'О компании', 'Услуги', 'Почему мы', 'Этапы работы', 'Контакты']
+            'tooltips': tooltip
         },
         normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
