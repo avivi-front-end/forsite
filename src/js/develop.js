@@ -207,7 +207,13 @@ function init(){
     myPlacemark = new ymaps.Placemark([59.940654, 30.262445], {
         hintContent: 'Форсайт',
         balloonContent: 'г. Санкт-Петербург, 18-я линия В.О., дом 45'
-    });
+    },{
+            iconLayout: 'default#image',
+            iconImageHref: './images/mark-map.png',
+            iconImageSize: [69, 100],
+            iconImageOffset: [-35, -100]
+        }
+    );
     myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects.add(myPlacemark);
 }
