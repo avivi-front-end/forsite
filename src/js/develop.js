@@ -1,7 +1,12 @@
 $(document).ready(function() {
     // plagin jquery pagepiling (on and off)
     (function(){
-        if ( $(window).width() > 767 ) {
+        if ( $('div').hasClass('section') !== true ) {
+            $('.del-pagepiling').remove();
+        }
+    })();
+    (function(){
+        if ( $(window).width() > 767 && $('div').hasClass('section') ) {
             pageScroll();
         } else {
             $('.del-pagepiling').remove();
@@ -46,10 +51,13 @@ $(document).ready(function() {
     stepsSlider ();
     headerMobile();
     //yandex map
-    ymaps.ready(init);
-    var myMap, myPlacemark;
+    (function(){
+        if ($('#map').length > 0) {
+            ymaps.ready(init);
+            var myMap, myPlacemark;
+        }
+    })();
     //formstyler for select
-    // $('.select-ooo').styler();
     $('.select-theme').styler({
         selectSearch: true,
         selectSearchLimit: 2,
@@ -263,3 +271,106 @@ function headerMobile() {
         });
     }
 }
+// change color header for static pages
+function headerNotPagepilling () {
+    if ( $('div').hasClass('section') !== true && $(window).width() >= 767) {
+        $(window).on('scroll',function(){
+            var block = $('.salary-main').height();
+            if ($(this).scrollTop() > block) {
+                $('.header').addClass('header-black');
+            }
+            else {
+                $('.header').removeClass('header-black');
+            }
+        });
+    }
+}
+headerNotPagepilling ();
+// open fancybox pop-up
+function popNext(popupId){
+    $.fancybox.open({
+        src:popupId,
+        opts:{
+            afterClose: function(){
+                $('form').trigger("reset");
+                clearTimeout(timer);
+            }
+        }
+    });
+    var timer = null;
+}
+(function(){
+    if ( $('div').hasClass('salary-main')) {
+        setTimeout(function(){
+            popNext('#question-salary')
+        },120000);
+    }
+})();
+// scroll to block
+$(document).on("click", "#js-scroll-down", function(e){
+    var elementClick = $(this).find('a').attr("href");
+    var targetHeight = $("#to-help");
+    var headerHeight = $(".header").height() + 50;
+    var destination = targetHeight.offset().top - headerHeight;
+    jQuery("html:not(:animated),body:not(:animated)").animate({
+        scrollTop: destination
+    }, 800);
+    return false;
+});
+
+$(document).on("click", ".b-help__btn", function(e){
+    var btn = $(this).attr('data-call-popup-1'); // result: '1' or '2' ...
+    var formLi = $('#call-popup-1 option');
+    // var selectAttr = formLi.attr('data-option');
+    // console.log(formLi);
+    if (btn === '1') {
+        // console.log('first btn');
+        formLi.each(function() {
+            // console.log($(this).attr('data-option'));
+            if ( $(this).attr('data-option') === '1' ) {
+                $(this).prop('selected', true);
+            }
+            $('select').trigger('refresh');
+        });
+    }
+    if (btn === '2') {
+        formLi.each(function() {
+            if ( $(this).attr('data-option') === '2' ) {
+                $(this).prop('selected', true);
+            }
+            $('select').trigger('refresh');
+        });
+    }
+    if (btn === '3') {
+        formLi.each(function() {
+            if ( $(this).attr('data-option') === '3' ) {
+                $(this).prop('selected', true);
+            }
+            $('select').trigger('refresh');
+        });
+    }
+    if (btn === '4') {
+        formLi.each(function() {
+            if ( $(this).attr('data-option') === '4' ) {
+                $(this).prop('selected', true);
+            }
+            $('select').trigger('refresh');
+        });
+    }
+    if (btn === '5') {
+        formLi.each(function() {
+            if ( $(this).attr('data-option') === '5' ) {
+                $(this).prop('selected', true);
+            }
+            $('select').trigger('refresh');
+        });
+    }
+    if (btn === '6') {
+        formLi.each(function() {
+            if ( $(this).attr('data-option') === '6' ) {
+                $(this).prop('selected', true);
+            }
+            $('select').trigger('refresh');
+        });
+    }
+});

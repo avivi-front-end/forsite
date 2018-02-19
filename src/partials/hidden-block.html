@@ -155,4 +155,132 @@
             </nav>
         </div>
     </div>
+    <div id="question-salary" class="question-salary">
+        <form action="ajax.php" name="" class="question-form">
+            <div class="question-form__img">
+                <span class="question-form__img--text">Подумайте, пока вы пытаетесь решить вопрос самостоятельно, ваш оппонент уже обратился к специалистам!</span>
+            </div>
+            <div class="question-form__title">
+                <h5>Не теряйте время</h5>
+            </div>
+            <div class="question-form__row">
+                <div class="question-form__item">
+                    <label class="question-form__name">Имя</label>
+                    <div class="question-form__item-input">
+                        <input type="text" name="contact_name" required="required" value="" placeholder="Константин">
+                    </div>
+                </div>
+                <div class="question-form__item">
+                    <label class="question-form__name">Телефон</label>
+                    <div class="question-form__item-input">
+                        <input type="text" name="contact_tel" value="" required="required" placeholder="+794444444" class="tel-mask">
+                    </div>
+                </div>
+            </div>
+            <div class="question-form__row">
+                <div class="question-form__item">
+                    <button type="submit" class="question-form__submit">
+                        <span>Отправить</span>
+                    </button>
+                </div>
+            </div>
+            <div class="question-form__row">
+                <p class="question-form__item">Нажимая кнопку «ОТПРАВИТЬ», вы соглашаетесь с условиями политики конфиденциальности, условиями хранения и обработки персональных данных.</p>
+            </div>
+        </form>
+    </div>
+    <div id="call-popup-1" class="register-modal">
+        <form action="ajax.php" name="" class="register">
+            <div class="register__title">
+                <h5>записаться на бесплатную консультацию</h5>
+            </div>
+            <div class="register__trigger register__row">
+                <span class="register__trigger__span register__visible">Физическое лицо</span>
+                <span class="register__trigger__span" >Юридическое лицо</span>
+                <div class="register__switch">
+                    <input type="checkbox" id="c2"/>
+                    <label class="js-register-switch" for="c2"></label>
+                </div>
+            </div>
+            <div class="jurname-row">
+                <div class="jurname-row__input">
+                    <label class="jurname-row__type">опф *</label>
+                    <select class="select-ooo">
+                        <option>ООО</option>
+                        <option>ИП</option>
+                        <option>АО</option>
+                        <option>ПАО</option>
+                        <option>ЗАО</option>
+                        <option>НП</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+                <div class="jurname-row__input">
+                    <label class="jurname-row__name">наименование *</label>
+                    <input type="text" name="register_name" required="required" value="" placeholder="Рога и копыта">
+                </div>
+            </div>
+            <div class="name-row register__row">
+                <div class="name-row__input">
+                    <label class="name-row__name">Фамилия *</label>
+                    <input type="text" name="register__first-name" required="required" value="" placeholder="Константинов">
+                </div>
+                <div class="name-row__input">
+                    <label class="name-row__last-name">Имя *</label>
+                    <input type="text" name="register_name" required="required" value="" placeholder="Константин">
+                </div>
+                <div class="name-row__input">
+                    <label class="name-row__surname">отчество</label>
+                    <input type="text" name="register_name" required="required" value="" placeholder="Константинович">
+                </div>
+            </div>
+            <div class="contacts-row register__row">
+                <div class="contacts-row__input">
+                    <label class="contacts-row__tel">телефон *</label>
+                    <input type="tel" name="register__tel" class="tel-mask" required="required" value="" placeholder="+7 999 999 99 99">
+                </div>
+                <div class="contacts-row__input">
+                    <label class="contacts-row__email">Email *</label>
+                    <input type="email" name="register_name" required="required" value="" placeholder="mail@mail.ru">
+                </div>
+            </div>
+            <div class="message-type-row">
+                <div class="message-type-row__input">
+                    <label class="message-type-row__type">тематика обращения *</label>
+                    <!--<input type="text" name="register__mess-type" required="required" value="" placeholder="Начните вводить">-->
+                    <select class="select-theme">
+                        <option></option> <!-- должен быть пуст! -->
+                        <option data-option="1">Правовое заключение</option>
+                        <option data-option="2">Пакет документов</option>
+                        <option data-option="3">Переговоры с работодателем</option>
+                        <option data-option="4">Подача искового заявления</option>
+                        <option data-option="5">Подача искового заявления с представительством</option>
+                        <option data-option="6">Решение «под ключ»</option>
+                    </select>
+                </div>
+            </div>
+            <div class="message-row">
+                <div class="message-row__input">
+                    <label class="message-row__text">Суть обращения *</label>
+                    <textarea rows="8"  name="text" placeholder="Опишите суть вопроса, чтобы наши юристы смогли подготовиться к вашему приходу."></textarea>
+                </div>
+            </div>
+            <div class="times-row register__row">
+                <div class="times-row__input">
+                    <label class="times-row__calendar">Дата консультации *</label>
+                    <input type="date" name="register__calendar" required="required" value="2018-01-01">
+                </div>
+                <div class="times-row__input">
+                    <label class="times-row__time">Время консультации *</label>
+                    <input type="time" name="register__time" required="required" value="13:30">
+                </div>
+                <div class="times-row__item">
+                    <button type="submit" class="register__submit">
+                        <span>Отправить</span>
+                    </button>
+                </div>
+            </div>
+            <p class="register__agreement">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь с условиями политики конфиденциальности, условиями хранения и обработки персональных данных.</p>
+        </form>
+    </div>
 </div>

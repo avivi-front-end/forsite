@@ -127,7 +127,6 @@ function validationCallDocuments(form){
     });
 
 }
-
 function popNext(popupId){
     $.fancybox.open({
         src:popupId,
